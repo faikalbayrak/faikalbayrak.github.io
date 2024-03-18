@@ -1,1 +1,0 @@
-# faikalbayrak.github.io
