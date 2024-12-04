@@ -105,7 +105,6 @@
                 <!--Banner Section Start-->
                 <section id="home" class="banner-section pt-page" >
 
-                    <!--Video Container-->
                     <div id="video-container"></div>
 
                     <div class="banner-content">
@@ -1009,15 +1008,12 @@
         <!--Site Main JS-->
         <script src="js/main.js"></script>
         <script>
-            $('#video-container').YTPlayer({
-            	//Change Youtube Video Url Here
-                videoURL: 'https://youtu.be/NpEaa2P7qZI',
-                containment: '#video-container',
-                autoPlay: true,
-                showControls: false,
-                loop: true,
-                addRaster: true,
-                mute: false
+            $(document).ready(function() {
+                $('#video-container').vide({
+                    'mp4': 'http://watson-vcard.netlify.com/video/video1.mp4',
+                    'webm': 'http://watson-vcard.netlify.com/video/video1.webm',
+                    'ogv': 'http://watson-vcard.netlify.com/video/video1.ogv',
+                });
             });
         </script>
     </body>
