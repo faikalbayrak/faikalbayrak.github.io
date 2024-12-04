@@ -102,11 +102,12 @@
             <!--Main Start-->
             <div id="main" class="site-main">
 
-                <!--Banner Section Start-->
-                <section id="home" class="banner-section pt-page" >
 
-                    <!--Video Container-->
-                    <div id="video-container"></div>
+                <!--Banner Section Start-->
+                <section id="home" class="banner-section pt-page" style="background-image: url('img/background/home-bg.jpg')">
+
+                    <!--Particle Container-->
+                    <div id="particles-js"></div>
 
                     <div class="banner-content">
                         <!--Banner Text-->
@@ -1009,17 +1010,12 @@
         <!--Site Main JS-->
         <script src="js/main.js"></script>
         <script>
-            $('#video-container').YTPlayer({
-            	//Change Youtube Video Url Here
-                videoURL: 'https://youtu.be/NpEaa2P7qZI',
-                containment: '#video-container',
-                autoPlay: true,
-                showControls: false,
-                loop: true,
-                addRaster: true,
-                mute: false
+            //Particles
+            particlesJS.load('particles-js', 'js/particles1.json', function() {
+                console.log('callback - particles.js config loaded');
             });
         </script>
     </body>
 </html>
+
 
