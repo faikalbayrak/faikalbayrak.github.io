@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Single Ajax Portfolio</title>
+        <style>
+            /* Responsive iframe container */
+            .responsive-iframe-container {
+                position: relative;
+                width: 100%;
+                padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+                height: 0;
+                overflow: hidden;
+            }
+            
+            .responsive-iframe-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+            
+            /* Custom large container (3x larger) */
+            .large-container {
+                width: 100%; /* 3x genişlik */
+                transform-origin: center;
+            }
+
+            .slider-container {
+                position: relative;
+                width: 80%;
+                margin: auto;
+                overflow: hidden;
+            }
+
+            .slider {
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .slider img {
+                width: 100%;
+                flex-shrink: 0;
+            }
+
+            button {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: rgba(0, 0, 0, 0.5);
+                color: white;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+                z-index: 10;
+            }
+
+            button.prev {
+                left: 10px;
+            }
+
+            button.next {
+                right: 10px;
+            }
+
+            </style>
+            <script>
+                const slider = document.querySelector('.slider');
+                const prevButton = document.querySelector('.prev');
+                const nextButton = document.querySelector('.next');
+                let currentIndex = 0;
+
+                prevButton.addEventListener('click', () => {
+                    currentIndex = (currentIndex > 0) ? currentIndex - 1 : 0;
+                    updateSlider();
+                });
+
+                nextButton.addEventListener('click', () => {
+                    const totalImages = document.querySelectorAll('.slider img').length;
+                    currentIndex = (currentIndex < totalImages - 1) ? currentIndex + 1 : totalImages - 1;
+                    updateSlider();
+                });
+
+                function updateSlider() {
+                    const imageWidth = slider.querySelector('img').clientWidth;
+                    slider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+                }
+            </script>
+    </head>
+    <body>
+        <div class="single-work">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-10 offset-md-1 mb-40">
+                        <h1 class="title mb-30">Chronomaly</h1>
+                        <p class="mb-30">
+                            Chronomaly throws players into a dark universe where science meets supernatural horror. In this 4-player cooperative experience, you and your fellow astronaut scientists breach the boundaries of time and space through mysterious portals, venturing into nightmarish realms in search of valuable specimens. Each expedition takes your team to different horror-filled environments - from fog-shrouded Victorian mansions to derelict space stations frozen in time. As you collect specimens for your research, you'll discover that these temporal anomalies have attracted entities beyond human comprehension. Your scientific endeavor quickly becomes a desperate fight for survival against cosmic horrors that shouldn't exist.
+                        </p>
+                        <ul class="information">
+                            <li><span class="title">Company:</span> Nightforge Studio</li>
+                            <li><span class="title">Type:</span> PC Game (In Development)</li>
+                            <li><span class="title">Website:</span> https://www.nightforgestudio.com/</li>
+                            <li><span class="title">Category:</span> FPS, Horror, Multiplayer, 4 player CO-OP</li>
+                        </ul>
+
+                        <!--<figure class="mt-30"><img src="img/single-work/img-1.jpg" alt=""></figure>-->
+                        <!--<figure class="mt-30"><img src="img/single-work/img-2.jpg" alt=""></figure>-->
+
+                        <div class="slider-container">
+                            <div class="slider">
+                                <img src="img/portfolio/chronomaly1.jpg" alt="Image 1">
+                                <img src="img/portfolio/chronomaly2.jpg" alt="Image 2">
+                                <img src="img/portfolio/chronomaly3.jpg" alt="Image 3">
+                                <img src="img/portfolio/chronomaly4.jpg" alt="Image 4">
+                                <img src="img/portfolio/chronomaly5.jpg" alt="Image 5">
+                                <img src="img/portfolio/chronomaly6.jpg" alt="Image 6">
+                                <img src="img/portfolio/chronomaly7.jpg" alt="Image 7">
+                                <img src="img/portfolio/chronomaly8.jpg" alt="Image 8">
+                            </div>
+                            <button class="prev">&#10094;</button>
+                            <button class="next">&#10095;</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
