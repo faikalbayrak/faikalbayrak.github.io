@@ -61,13 +61,19 @@
                             <p>This section will describe the steps of the developed model for detecting errors caused by fuse arrangements. The work consists of two parts: hardware and software. A general flowchart of the developed model is included at the end of the paper.</p>
         
                             <h3>Hardware</h3>
-                            <p>Each car contains two fuse boxes. To capture the correct image of both fuse boxes, cameras were used. Two Keyence CV-200C model cameras were mounted on a horizontal metal profile at an angle to capture the fuse boxes on the car. Additionally, dome lighting was used to minimize specular light reflections and uneven color distributions in the captured images [14]. For the deep learning models to work efficiently, an Nvidia Xavier development board with a GPU was used. This board helped to prevent delays during the image processing and ensure the assembly line's tempo was not lagging behind [15].</p>
+                            <p>Each car contains two fuse boxes. To capture the correct image of both fuse boxes, cameras were used. Two Keyence CV-200C model cameras were mounted on a horizontal metal profile at an angle to capture the fuse boxes on the car. Additionally, dome lighting was used to minimize specular light reflections and uneven color distributions in the captured images. For the deep learning models to work efficiently, an Nvidia Xavier development board with a GPU was used. This board helped to prevent delays during the image processing and ensure the assembly line's tempo was not lagging behind.</p>
         
                             <h3>Software</h3>
                             <p>The following steps were carried out for the software part of the developed model:</p>
         
                             <h4>Obtaining the Image in the Correct Position</h4>
-                            <p>In this work, unlike other studies in the literature, the fuse boxes to be inspected are located inside a car that moves on a continuous production line without any locking mechanism. For this reason, a deep learning model using Mask R-CNN was trained to trigger the cameras and ensure the fuse boxes are captured at the correct moment. This process occurs in two steps. First, fuse boxes that are suitable for the model are labeled and introduced to the model. In the second step, the trained model helps detect the fuse box on the assembly line and capture its image. The centroid of the detected fuse box is calculated. The point on the reference line triggers the camera, and the image capture is completed at the correct time (Figure 1). This ensures that the detected fuses are held in a fixed position.</p>
+                            <p>In this work, unlike other studies in the literature, the fuse boxes to be inspected are located inside a car that moves on a continuous production line without any locking mechanism. For this reason, a deep learning model using Mask R-CNN was trained to trigger the cameras and ensure the fuse boxes are captured at the correct moment. This process occurs in two steps. First, fuse boxes that are suitable for the model are labeled and introduced to the model. In the second step, the trained model helps detect the fuse box on the assembly line and capture its image. The centroid of the detected fuse box is calculated. The point on the reference line triggers the camera, and the image capture is completed at the correct time. This ensures that the detected fuses are held in a fixed position.</p>
+                        </div>
+
+                        <!-- Developer documentation section -->
+                        <div class="mt-30">
+                            <h3>For Detailed Information</h3>
+                            <p>If you require more detailed information regarding the development process, please feel free to contact the developer for the full documentation. The document provides comprehensive insights into both hardware and software configurations, as well as the overall workflow and technical specifications of the system.</p>
                         </div>
 
                     </div>
