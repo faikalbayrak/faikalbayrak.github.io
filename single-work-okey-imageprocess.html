@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Single Ajax Portfolio</title>
+        <style>
+            /* Responsive iframe container */
+            .responsive-iframe-container {
+                position: relative;
+                width: 100%;
+                padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+                height: 0;
+                overflow: hidden;
+            }
+            
+            .responsive-iframe-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+            
+            /* Custom large container (3x larger) */
+            .large-container {
+                width: 100%; /* 3x genişlik */
+                transform-origin: center;
+            }
+            </style>
+    </head>
+    <body>
+        <div class="single-work">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-10 offset-md-1 mb-40">
+                        <h1 class="title mb-30">101&OKEY CALCULATOR</h1>
+                        <p class="mb-30">
+                            This application allows you to instantly find the correct arrangement of the tiles in your hand while playing the okey game using your phone's camera. It uses the YOLOv3 deep learning model and the Python Tensorflow library on the server side to do this. I also used Unity Engine as the interface and application environment. When a user takes a photo, Unity sends this photo to a server as a request and expects a series of tiles in return. This series represents the tiles in the user's hand. Then, using C# and Unity, the tiles in this series are brought into the most appropriate arrangement using a square matrix and displayed to the user.
+                        </p>
+                        <ul class="information">
+                            <li><span class="title">Company:</span> Personal Project</li>
+                            <li><span class="title">Category:</span> Image Processing, Object Detection</li>
+                        </ul>
+                        
+                        <figure class="mt-30">
+                            <div class="responsive-iframe-container large-container">
+                                <iframe 
+                                    src="https://www.youtube.com/watch?v=SsVUqQiVjn4" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </figure>
+
+                        <figure class="mt-30">
+                            <div class="responsive-iframe-container large-container">
+                                <iframe 
+                                    src="img/portfolio/101image1.jpeg" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </figure>
+
+                        <figure class="mt-30">
+                            <div class="responsive-iframe-container large-container">
+                                <iframe 
+                                    src="img/portfolio/101image2.jpeg" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </figure>
+
+                        <figure class="mt-30">
+                            <div class="responsive-iframe-container large-container">
+                                <iframe 
+                                    src="img/portfolio/101image3.jpeg" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </figure>
+
+                        <figure class="mt-30">
+                            <div class="responsive-iframe-container large-container">
+                                <iframe 
+                                    src="img/portfolio/101image4.jpeg" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </figure>
+
+                        <!-- Developer documentation section -->
+                        <div class="mt-30">
+                            <h3>For Detailed Information</h3>
+                            <a href="https://www.linkedin.com/posts/faik-albayrak-a32499173_python-opencv-yolov3-activity-7145726818615021570-Un4E?utm_source=share&utm_medium=member_desktop">Linkedin Link</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
