@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Single Ajax Portfolio</title>
+        <style>
+            /* Responsive iframe container */
+            .responsive-iframe-container {
+                position: relative;
+                width: 100%;
+                padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+                height: 0;
+                overflow: hidden;
+            }
+            
+            .responsive-iframe-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+            
+            /* Custom large container (3x larger) */
+            .large-container {
+                width: 100%; /* 3x genişlik */
+                transform-origin: center;
+            }
+            </style>
+    </head>
+    <body>
+        <div class="single-work">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-10 offset-md-1 mb-40">
+                        <h1 class="title mb-30">No Surrender The War</h1>
+                        <p class="mb-30">
+                            Defend Against Ultimate Evil. Start shooting real enemies, not props carrying suitcases. In No Surrender: The War, you become a Machine Gunner, firing millions of bullets to hold back hordes of evil. This thrilling FPS game challenges you to defend your point against relentless enemy attacks. Are you ready to stand your ground?
+                        </p>
+                        <ul class="information">
+                            <li><span class="title">Company:</span> No Surrender</li>
+                            <li><span class="title">Website:</span> https://nosurrenderheroes.io/</li>
+                            <li><span class="title">Category:</span> FPS, Defense, Mid-Core</li>
+                        </ul>
+
+                        <!--<figure class="mt-30"><img src="img/single-work/img-1.jpg" alt=""></figure>-->
+                        <!--<figure class="mt-30"><img src="img/single-work/img-2.jpg" alt=""></figure>-->
+
+                        <figure class="mt-30">
+                            <div class="responsive-iframe-container large-container">
+                                <iframe 
+                                    src="https://www.youtube.com/watch?v=lWFX91hdrNQ" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </figure>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
