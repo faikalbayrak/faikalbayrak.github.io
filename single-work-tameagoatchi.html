@@ -1,132 +1,175 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Single Ajax Portfolio</title>
-        <style>
-            body {
-                background: url("img/portfolio/tameagoatchi-cover.png") no-repeat center center fixed;
-                background-size: cover;
-            }
-            /* Responsive iframe container */
-            .responsive-iframe-container {
-                position: relative;
-                width: 100%;
-                padding-bottom: 56.25%; /* Aspect ratio 16:9 */
-                height: 0;
-                overflow: hidden;
-            }
-            
-            .responsive-iframe-container iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border: 0;
-            }
-            
-            /* Custom large container (3x larger) */
-            .large-container {
-                width: 100%; /* 3x genişlik */
-                transform-origin: center;
-            }
+<head>
+  <meta charset="UTF-8" />
+  <title>Single Ajax Portfolio</title>
+  <style>
+    /* Body background */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
 
-            .slider-container {
-                position: relative;
-                width: 80%;
-                margin: auto;
-                overflow: hidden;
-            }
+    body {
+      background: url("img/portfolio/tameagoatchi-cover.png") no-repeat center center fixed;
+      background-size: cover;
+      /* Eğer image görünmüyorsa geçici kontrol için arka plan rengi ekleyebilirsin */
+      /* background-color: #222; */
+      color: #fff; /* yazılar arka planda okunaklı olsun */
+      font-family: Arial, sans-serif;
+    }
 
-            .slider {
-                display: flex;
-                transition: transform 0.5s ease-in-out;
-            }
+    /* Eğer container arkasında beyaz blok varsa, transparan yap */
+    .container {
+      background: transparent;
+    }
 
-            .slider img {
-                width: 100%;
-                flex-shrink: 0;
-            }
+    /* Responsive iframe container */
+    .responsive-iframe-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+      height: 0;
+      overflow: hidden;
+    }
 
-            button {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                background-color: rgba(0, 0, 0, 0.5);
-                color: white;
-                border: none;
-                padding: 10px;
-                cursor: pointer;
-                z-index: 10;
-            }
+    .responsive-iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
 
-            button.prev {
-                left: 10px;
-            }
+    .large-container {
+      width: 100%;
+      transform-origin: center;
+    }
 
-            button.next {
-                right: 10px;
-            }
+    .slider-container {
+      position: relative;
+      width: 80%;
+      margin: 40px auto; /* biraz üst boşluk */
+      overflow: hidden;
+      background: rgba(0,0,0,0.25); /* istersen hafif arka plan */
+      border-radius: 8px;
+      padding: 10px;
+    }
 
-            </style>
-            <script>
-                const slider = document.querySelector('.slider');
-                const prevButton = document.querySelector('.prev');
-                const nextButton = document.querySelector('.next');
-                let currentIndex = 0;
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      will-change: transform;
+    }
 
-                prevButton.addEventListener('click', () => {
-                    currentIndex = (currentIndex > 0) ? currentIndex - 1 : 0;
-                    updateSlider();
-                });
+    .slider img {
+      width: 100%;
+      flex-shrink: 0;
+      display: block;
+    }
 
-                nextButton.addEventListener('click', () => {
-                    const totalImages = document.querySelectorAll('.slider img').length;
-                    currentIndex = (currentIndex < totalImages - 1) ? currentIndex + 1 : totalImages - 1;
-                    updateSlider();
-                });
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+    }
 
-                function updateSlider() {
-                    const imageWidth = slider.querySelector('img').clientWidth;
-                    slider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
-                }
-            </script>
-            </style>
-    </head>
-    <body>
-        <div class="single-work">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-md-10 offset-md-1 mb-40">
-                        <h1 class="title mb-30">Tame-A-Goat-Chi</h1>
-                        <p class="mb-30">
-                            Run your own adorable goat pasture in this half-screen idle game! Tame, feed and care for quirky goats while growing your farm – all while you work or browse the web!
-                        </p>
-                        <ul class="information">
-                            <li><span class="title">Company:</span> Rio Master Games</li>
-                            <li><span class="title">Website:</span> https://www.riomaster.com/</li>
-                            <li><span class="title">Category:</span> PC, Steam, Idle Pasture Game</li>
-                        </ul>
+    button.prev { left: 10px; }
+    button.next { right: 10px; }
 
-                        <!--<figure class="mt-30"><img src="img/single-work/img-1.jpg" alt=""></figure>-->
-                        <!--<figure class="mt-30"><img src="img/single-work/img-2.jpg" alt=""></figure>-->
+    /* Basit responsive düzeltme */
+    @media (max-width: 800px) {
+      .slider-container { width: 95%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="single-work">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-10 offset-md-1 mb-40">
+          <h1 class="title mb-30">Tame-A-Goat-Chi</h1>
+          <p class="mb-30">
+            Run your own adorable goat pasture in this half-screen idle game! Tame, feed and care for quirky goats while growing your farm.
+          </p>
+          <ul class="information">
+            <li><span class="title">Company:</span> Rio Master Games</li>
+            <li><span class="title">Website:</span> https://www.riomaster.com/</li>
+            <li><span class="title">Category:</span> PC, Steam, Idle Pasture Game</li>
+          </ul>
 
-                        <div class="slider-container">
-                            <div class="slider">
-                                <img src="img/portfolio/Tameagoatchi-1.jpg" alt="Image 1">
-                                <img src="img/portfolio/Tameagoatchi-2.jpg" alt="Image 2">
-                                <img src="img/portfolio/Tameagoatchi-3.jpg" alt="Image 3">
-                                <img src="img/portfolio/Tameagoatchi-4.jpg" alt="Image 4">
-                                <img src="img/portfolio/Tameagoatchi-5.jpg" alt="Image 5">
-                            </div>
-                            <button class="prev">&#10094;</button>
-                            <button class="next">&#10095;</button>
-                        </div>
-
-                    </div>
-                </div>
+          <div class="slider-container">
+            <div class="slider">
+              <img src="img/portfolio/Tameagoatchi-1.jpg" alt="Image 1">
+              <img src="img/portfolio/Tameagoatchi-2.jpg" alt="Image 2">
+              <img src="img/portfolio/Tameagoatchi-3.jpg" alt="Image 3">
+              <img src="img/portfolio/Tameagoatchi-4.jpg" alt="Image 4">
+              <img src="img/portfolio/Tameagoatchi-5.jpg" alt="Image 5">
             </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+          </div>
+
         </div>
-    </body>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // DOM hazır olunca çalıştır
+    document.addEventListener('DOMContentLoaded', function () {
+      const slider = document.querySelector('.slider');
+      const prevButton = document.querySelector('.prev');
+      const nextButton = document.querySelector('.next');
+      const images = document.querySelectorAll('.slider img');
+      let currentIndex = 0;
+
+      // Her resim aynı genişlikte varsayımı yerine container genişliğine göre hesapla
+      function updateSlider() {
+        const imageWidth = images[0].clientWidth;
+        slider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+      }
+
+      prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : 0;
+        updateSlider();
+      });
+
+      nextButton.addEventListener('click', () => {
+        const totalImages = images.length;
+        currentIndex = (currentIndex < totalImages - 1) ? currentIndex + 1 : totalImages - 1;
+        updateSlider();
+      });
+
+      // pencere boyutu değişince slider pozisyonunu düzelt
+      window.addEventListener('resize', updateSlider);
+
+      // görseller yüklendiğinde ilk ayarı uygula
+      // eğer çok büyük resimler varsa load eventlerini bekle
+      if (images.length) {
+        let loaded = 0;
+        images.forEach(img => {
+          if (img.complete) {
+            loaded++;
+          } else {
+            img.addEventListener('load', () => {
+              loaded++;
+              if (loaded === images.length) updateSlider();
+            });
+          }
+        });
+        // eğer hepsi önceden yüklüyse hemen çağır
+        if (loaded === images.length) updateSlider();
+      }
+    });
+  </script>
+</body>
 </html>
